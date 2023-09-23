@@ -28,7 +28,7 @@ defmodule ATM do
     select_menu()
   end
 
-  def deposit() do
+  defp deposit() do
     # 입금 금액 입력
     input = IO.gets("입금하실 금액을 입력해주세요. ")
     |> delete_newline_from_input()
@@ -58,7 +58,7 @@ defmodule ATM do
     end
   end
 
-  def withdraw() do
+  defp withdraw() do
     # 출금 금액 입력
     input = IO.gets("출금하실 금액을 입력해주세요. ")
     |> delete_newline_from_input()
@@ -91,12 +91,12 @@ defmodule ATM do
         File.close(file)
 
         # 출금 후 잔액 보여주기
-        IO.puts("입금 후 잔액: #{subtracted_amount}\n")
+        IO.puts("출금 후 잔액: #{subtracted_amount}\n")
       end
     end
   end
 
-  def get_balance() do
+  defp get_balance() do
     {:ok, balance} = File.read(@balance_path)
     IO.puts("잔액: #{balance}원\n")
   end
