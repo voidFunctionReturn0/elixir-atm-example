@@ -19,7 +19,7 @@ defmodule ATM do
 
       "3\n" ->
         IO.puts("[잔액 조회]")
-        check()
+        get_balance()
 
       _ ->
         IO.puts("1~3 사이 숫자를 입력해주세요.")
@@ -96,7 +96,7 @@ defmodule ATM do
     end
   end
 
-  def check() do
+  def get_balance() do
     {:ok, balance} = File.read(@balance_path)
     IO.puts("잔액: #{balance}원\n")
   end
