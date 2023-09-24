@@ -101,7 +101,7 @@ defmodule ATM do
     IO.puts("잔액: #{balance}원\n")
   end
 
-  def delete_newline_from_input(input) do
+  defp delete_newline_from_input(input) do
     String.replace(input, "\n", "")
   end
 end
